@@ -30,10 +30,7 @@ func TestMono(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	c, err := audio.NewContext(44100)
-	if err != nil {
-		t.Fatal(err)
-	}
+	c := audio.NewContext(44100)
 
 	s, err := Decode(c, audio.BytesReadSeekCloser(bs))
 	if err != nil {
