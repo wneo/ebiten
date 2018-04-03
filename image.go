@@ -64,12 +64,9 @@ func (i *Image) Size() (width, height int) {
 // Clear resets the pixels of the image into 0.
 //
 // When the image is disposed, Clear does nothing.
-//
-// Clear always returns nil as of 1.5.0-alpha.
-func (i *Image) Clear() error {
+func (i *Image) Clear() {
 	i.copyCheck()
 	i.fill(0, 0, 0, 0)
-	return nil
 }
 
 // Fill fills the image with a solid color.
