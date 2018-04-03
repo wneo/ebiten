@@ -108,7 +108,7 @@ func drawGlyph(dst *ebiten.Image, face font.Face, r rune, x, y fixed.Int26_6, cl
 	}
 	op.ColorM = e.m
 
-	_ = dst.DrawImage(img, op)
+	dst.DrawImage(img, op)
 }
 
 var (
