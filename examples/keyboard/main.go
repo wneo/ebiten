@@ -41,7 +41,7 @@ func init() {
 		log.Fatal(err)
 	}
 
-	keyboardImage, _ = ebiten.NewImageFromImage(img, ebiten.FilterDefault)
+	keyboardImage = ebiten.NewImageFromImage(img, ebiten.FilterDefault)
 }
 
 var keyNames = map[ebiten.Key]string{

@@ -332,9 +332,7 @@ func newVolatileImage(width, height int, filter Filter) *Image {
 //
 // filter argument is just for backward compatibility.
 // If you are not sure, specify FilterDefault.
-//
-// Error returned by NewImageFromImage is always nil as of 1.5.0-alpha.
-func NewImageFromImage(source image.Image, filter Filter) (*Image, error) {
+func NewImageFromImage(source image.Image, filter Filter) *Image {
 	size := source.Bounds().Size()
 
 	width, height := size.X, size.Y
@@ -348,7 +346,7 @@ func NewImageFromImage(source image.Image, filter Filter) (*Image, error) {
 	runtime.SetFinalizer(i, (*Image).Dispose)
 
 	i.ReplacePixels(graphicsutil.CopyImage(source))
-	return i, nil
+	return i
 }
 
 func newImageWithScreenFramebuffer(width, height int) *Image {

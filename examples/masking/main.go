@@ -58,13 +58,13 @@ func init() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	bgImage, _ = ebiten.NewImageFromImage(img, ebiten.FilterDefault)
+	bgImage = ebiten.NewImageFromImage(img, ebiten.FilterDefault)
 
 	img, _, err = image.Decode(bytes.NewReader(images.FiveYears_jpg))
 	if err != nil {
 		log.Fatal(err)
 	}
-	fgImage, _ = ebiten.NewImageFromImage(img, ebiten.FilterDefault)
+	fgImage = ebiten.NewImageFromImage(img, ebiten.FilterDefault)
 
 	maskedFgImage = ebiten.NewImage(screenWidth, screenHeight, ebiten.FilterDefault)
 
@@ -81,7 +81,7 @@ func init() {
 			a.SetAlpha(i, j, color.Alpha{b})
 		}
 	}
-	spotLightImage, _ = ebiten.NewImageFromImage(a, ebiten.FilterDefault)
+	spotLightImage = ebiten.NewImageFromImage(a, ebiten.FilterDefault)
 }
 
 func update(screen *ebiten.Image) error {

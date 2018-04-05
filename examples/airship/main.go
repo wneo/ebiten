@@ -65,7 +65,7 @@ func init() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	gophersImage, _ = ebiten.NewImageFromImage(img, ebiten.FilterDefault)
+	gophersImage = ebiten.NewImageFromImage(img, ebiten.FilterDefault)
 
 	groundImage = ebiten.NewImage(screenWidth*2, screenHeight*2/3+50, ebiten.FilterDefault)
 	perspectiveGroundImage = ebiten.NewImage(screenWidth*2, screenHeight, ebiten.FilterDefault)
@@ -96,7 +96,7 @@ func init() {
 			fogRGBA.SetRGBA(i, j, clr)
 		}
 	}
-	fogImage, _ = ebiten.NewImageFromImage(fogRGBA, ebiten.FilterDefault)
+	fogImage = ebiten.NewImageFromImage(fogRGBA, ebiten.FilterDefault)
 }
 
 // player represents the current airship's position.

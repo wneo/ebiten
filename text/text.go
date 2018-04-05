@@ -183,7 +183,7 @@ func getGlyphImage(face font.Face, r rune) *ebiten.Image {
 	d.Dot = fixed.Point26_6{-b.Min.X, -b.Min.Y}
 	d.DrawString(string(r))
 
-	img, _ := ebiten.NewImageFromImage(rgba, ebiten.FilterDefault)
+	img := ebiten.NewImageFromImage(rgba, ebiten.FilterDefault)
 	glyphImageCache[face][r] = &glyphImageCacheEntry{
 		image: img,
 		atime: now(),

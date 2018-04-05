@@ -58,7 +58,7 @@ func init() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	uiImage, _ = ebiten.NewImageFromImage(img, ebiten.FilterDefault)
+	uiImage = ebiten.NewImageFromImage(img, ebiten.FilterDefault)
 
 	tt, err := truetype.Parse(goregular.TTF)
 	if err != nil {

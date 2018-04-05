@@ -52,7 +52,7 @@ func init() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	gophersImage, _ = ebiten.NewImageFromImage(img, ebiten.FilterDefault)
+	gophersImage = ebiten.NewImageFromImage(img, ebiten.FilterDefault)
 }
 
 func update(screen *ebiten.Image) error {
